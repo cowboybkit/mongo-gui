@@ -6,7 +6,6 @@ COPY . /app
 WORKDIR /app
 
 RUN npm install
-RUN npm run build-ui
 
 # HEALTHCHECK --interval=10s CMD curl --fail http://localhost:4321 || exit 1
 
