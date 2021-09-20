@@ -18,10 +18,10 @@ const databasesRoute = require('./src/routes/database');
 const app = express();
 
 // serve static files form public
-app.use(express.static('public'));
+app.use('/mongo', express.static('public'));
 
 // process gzipped static files
-app.use(gzipProcessor(__dirname + '/public'));
+app.use('/mongo', gzipProcessor(__dirname + '/public'));
 
 // enables cors
 app.use(cors());
@@ -33,10 +33,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: process.env.BODY_SIZE || '50mb' }));
 
 // api routing
-app.use('/databases', databasesRoute);
+app.use('/mongo/databases', databasesRoute);
 
 // serve home page
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+app.get('/mongo/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
 // connect to database
 dataAccessAdapter.InitDB(app);
