@@ -5,6 +5,12 @@
 #  Mongo GUI
 A web-based MongoDB graphical user interface.
 
+#  How to custom path
+1. Build under source code, change mongodev => your_subpath_want_to_custom
+2. Build Docker push
+3. Change SUBPATH env in docker-compose.yml
+
+
 ## Demo
 Read-only demo: https://mongo-gui.herokuapp.com/
 

@@ -2,10 +2,11 @@ version: '3'
 
 services:
   mongo-gui:
-    container_name: "mongo-gui"
-    image: ugleiton/mongo-gui
+    image: cowboybkit/mongo-gui:v1
+    build: .
     restart: always
     ports:
       - "4321:4321"
     environment:
-      - MONGO_URL=mongodb://localhost:27017
+      - MONGO_URL=mongodb://192.168.1.4:27017
+      - SUBPATH=/mongodev
