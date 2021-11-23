@@ -6,7 +6,7 @@
 A web-based MongoDB graphical user interface.
 
 #  How to custom path
-1. Build under source code, change mongodev => your_subpath_want_to_custom
+1. Build under source code, change mongopro => your_subpath_want_to_custom
 2. Build Docker push
 3. Change SUBPATH env in docker-compose.yml
 

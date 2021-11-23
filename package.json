@@ -23,7 +23,7 @@
     "url": "https://github.com/arunbandari/mongo-gui"
   },
   "scripts": {
-    "start": "SUBPATH=/mongodev node server.js",
+    "start": "SUBPATH=/mongopro node server.js",
     "build-ui": "cd client && npm run clean-build-compress"
   },
   "dependencies": {
