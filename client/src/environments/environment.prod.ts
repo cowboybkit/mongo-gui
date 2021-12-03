@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiRoot: '/mongopro'
+  apiRoot: '/mongodev'
 };
