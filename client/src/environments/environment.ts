@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiRoot: 'http://localhost:4321/mongo/'
+  apiRoot: 'http://localhost:4321/mongopro/'
 };
 
 /*

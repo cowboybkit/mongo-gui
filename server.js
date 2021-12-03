@@ -18,10 +18,10 @@ const databasesRoute = require('./src/routes/database');
 const app = express();
 
 // serve static files form public
-app.use('/mongo', express.static('public'));
+app.use('/mongopro', express.static('public'));
 
 // process gzipped static files
-app.use('/mongo', gzipProcessor(__dirname + '/public'));
+app.use('/mongopro', gzipProcessor(__dirname + '/public'));
 
 // enables cors
 app.use(cors());
@@ -33,10 +33,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: process.env.BODY_SIZE || '50mb' }));
 
 // api routing
-app.use('/mongo/databases', databasesRoute);
+app.use('/mongopro/databases', databasesRoute);
 
 // serve home page
-app.get('/mongo/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+app.get('/mongopro/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
 // connect to database
 dataAccessAdapter.InitDB(app);
@@ -45,7 +45,7 @@ dataAccessAdapter.InitDB(app);
 app.once('connectedToDB', () => {
   const port = argv.p || process.env.PORT || 4321;
   app.listen(port, () => {
-    console.log(`> Access Mongo GUI at http://localhost:${port}`);
+    console.log(`> Access Mongo GUI at http://localhost:${port}/mongopro`);
   });
 });
 
